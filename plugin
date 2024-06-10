@@ -1,0 +1,12 @@
+case 'listrespon': {
+    if (Object.keys(global.db.data.respon).length === 0) {
+        return setReply("[-----LIST RESPON-----]\nTidak ada data respon di database.");
+    }
+
+    let commandList = Object.entries(global.db.data.respon)
+        .map(([key]) => `•${key}`)
+        .join('\n');
+
+    setReply(`[-----LIST RESPON-----]\n${commandList}`);
+}
+break
